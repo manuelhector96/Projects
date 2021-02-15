@@ -127,6 +127,8 @@ public class ExerciseProblems {
          *  for example on
          *
          *  (4) A user inputs a long positive number m. You need to find out what is the smallest int number n such that n! > m
+         *
+         *  (5) Given a nxm matrix can you rotate to 90 degrees to make it a mxn matrix
          ****************************************************************************************************************************/
 
         //(1)
@@ -183,6 +185,27 @@ public class ExerciseProblems {
             System.out.println("Smallest factorial: " + fact);
         }
 
+        //5
+
+        public static void rotated_Matrix(int a, int b, int[][] matrix){
+
+            int[][] matrix_ = new int[a][b];
+            int[][] matrix_rotated = new int[a][b];
+            for(int i= 0; i < a; i++){
+                for(int j = 0; j < b; j++){
+                    matrix_[i][j] = matrix[i][j];
+                }
+            }
+
+            for(int j = 0; j < b; j++) {
+                for (int i = a - 1; i >= 0; i--) {
+                    matrix_rotated[i][j] = matrix_[i][j];
+                    System.out.print(matrix_rotated[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+
 
 
         /***************************************************************************************************************************
@@ -222,6 +245,16 @@ public class ExerciseProblems {
             ExerciseProblems exercise4 = new ExerciseProblems();
             String c = "G()(al)";
             System.out.println(exercise4.interpret(c));
+
+            /**
+             *  (5)
+             **/
+            System.out.println("Answer to Exercise 5: ");
+            int[][] m ={{0, 1, 2, 3},
+                        {10, 11, 12, 13},
+                        {20, 21, 22, 23} };
+            rotated_Matrix(3,4,m);
+
 
 
             /**************************************************************************
